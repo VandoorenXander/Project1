@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html{
+  font-family: 'roboto';
+  font-weight: 400;
+  
+}
+
+.c-header{
+  background-color: #007272;
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+}
+
+.c-header__nav{
+  width: 90%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.c-header__menu-holder{
+  display: flex;
+}
+
+.c-header__menu-item{
+
+  list-style: none;
+  margin-left: 24px;
+
+}
+
+.c-header__menu-link{
+  text-decoration: none;
+  color: white;
+  
+}
+
+.c-header__menu-link:hover, .c-header__menu-link:focus{
+  transition: 0.1s ease;
+  color: #cccccc;
+}
+.c-header__menu-link:active{
+  transition: 0.1s ease;
+  color: #cccccc;
+}
+
+.c-header__menu-icon{
+  display:none
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  margin-top: 24px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  padding: 5px 10px 5px 10px
+}
+
+@media(max-width:450px){
+
+  .c-header__menu-icon{
+    display:unset;
+  }
+  .c-header__menu{
+    display: none;
+  }
+
+
+}
+
+/*
+    Component: mobile nav
+    ---
+    Dedicated mobile nav component
+*/
+
+.c-mobile-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  pointer-events: none;
+  
+}
+
+.has-mobile-nav .c-mobile-nav {
+  pointer-events: auto;
+}
+
+.c-page{
+  transform: translateX(0%);
+  transition: transform .25s ease;
+}
+
+.has-mobile-nav .c-page{
+  transform: translateX(25%);
+}
+
+.c-mobile-nav__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.c-mobile-nav__bg {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #202024;
+  transition: opacity .25s ease;
+}
+
+.has-mobile-nav .c-mobile-nav__bg {
+  opacity: 0.5;
+}
+
+.c-mobile-nav__body {
+  position: relative;
+  padding: 24px;
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff;
+  transform: translateX(-100%);
+  transition: transform .25s ease;
+}
+
+.has-mobile-nav .c-mobile-nav__body {
+  transform: translateX(0%);
+}
+
+.c-nav-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.c-nav-trigger__svg {
+  fill: #202024;
+  height: 100%;
+}
+
+.o-button-reset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
+
+.c-nav__link {
+  text-decoration: none;
+  font-weight: 400;
+  display: block;
+  padding: 8px 0;
+  color: black;
+}
+
+.c-page__content{
+  margin: auto;
+  max-width: 65%;
+  margin-top: 56px;
+  padding: 10px;
+}
+
+.checkboxes label {
+  display: inline-block;
+  padding-right: 10px;
+  white-space: nowrap;
+}
+.checkboxes input {
+  vertical-align: middle;
+}
+.checkboxes label span {
+  vertical-align: middle;
+}
+@media (min-width: 768px) {
+  .c-mobile-nav__body {
+      padding: 48px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* Hide the mobile nav on larger viewports even whent it's open on smaller screens */
+  .c-mobile-nav {
+      display: none !important;
+  }
+}
+.c-sizeselector{
+  display: flex;
+  max-width: 20%;
+}
+option::selection{
+  background-color:navy;
+}
+.center{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  overflow-x: auto;
+}
+
+.c-timechange{
+  display: flex;
+    flex-direction: column;
+
+}
+
+.c-settings{
+  display: flex;
+  justify-content: space-between; 
+
+}
+.c-timechanger{
+  display:flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.c-timechanger input{
+  margin-left: 24px;
+}
+
+.c-endsettings{
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+}
+.c-endsettings button{
+  margin-top: 12px;
+  
+}
+
+.o-button{
+  background-color: darkcyan;
+  border: none;
+  color: white;
+  padding: 5px;
+}
+
+.o-button:hover{
+  transition: 0.1s ease;
+  background-color: rgb(1, 88, 88);
+}
+
+.o-button:checked{
+  background-color: rgb(0, 61, 61);
+}
+
+@media(max-width:450px){
+
+  .c-settings{
+    flex-direction: column;
+  }
+  .c-timechange{
+    margin-top: 16px;
+  }
+  .c-timechanger{
+    margin-left: 0px;
+  }
+  .c-page__content{
+    max-width: 80%;
+  }
+
+
+}
